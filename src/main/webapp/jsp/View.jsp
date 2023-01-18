@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,10 +20,10 @@
 			<th scope="col">療養のために行ったこと（なんの薬を飲んだか、など）:</th>
 			<th scope="col">その他（療養証明書の取得方法など、自由に）:</th>
 		</tr>
-<% for(PostBean p : post){ %>
-		<tr>
-			<td><%=  %>
-		</tr>
+<c:forEach var="post" items="${postList}">
+	<p><c:out value="${postList.age}" />:
+	<c:out value="${postList.gemder}" /></p>
+</c:forEach>
 	</tbody>
 </table>
 </body>
