@@ -1,4 +1,4 @@
-package covServ;
+package servlet;
 
 import java.io.IOException;
 
@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.DoPostLogic;
+import model.PostBean;
 
 
 @WebServlet("/postcomplete")
@@ -49,7 +52,8 @@ public class PostServlet extends HttpServlet {
 			
 			request.setAttribute("p", p);
 			
-			postlistDAO.create(p);
+			DoPostLogic doPostLogic = new DoPostLogic();
+			doPostLogic.execute(p);
 			
 			RequestDispatcher dispatcher =
 					 request.getRequestDispatcher("/jsp/postComplete.jsp");

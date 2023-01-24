@@ -1,4 +1,4 @@
-package covServ;
+package model;
 
 import java.io.Serializable;
 

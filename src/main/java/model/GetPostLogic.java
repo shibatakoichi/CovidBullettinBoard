@@ -1,6 +1,8 @@
-package covServ;
+package model;
 
 import java.util.List;
+
+import dao.postlistDAO;
 
 public class GetPostLogic {
 	public List<PostBean> execute() {

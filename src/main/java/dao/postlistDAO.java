@@ -1,4 +1,4 @@
-package covServ;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.PostBean;
 
 public class postlistDAO {
 	private static final String RDB_DRIVE="org.postgresql.Driver";
@@ -55,7 +57,7 @@ public class postlistDAO {
 		return postList;
 	}
 	
-	public static Connection create(PostBean p){
+	public Connection create(PostBean p){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 	 	try{
